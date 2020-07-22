@@ -1,0 +1,114 @@
+<template name="videoPlayer">
+  {{#with video}}
+  <div class="video-player unselectable">
+    {{#if markersDisparados.length}}
+    <div class="markersDisparados">
+      {{#each markersDisparados}}
+        <div class="marker">
+          <span>{{userId}}</span>
+          <span>{{text}}</span>
+        </div>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    <video id="video" class="video" preload="none" volume="0">
+      <source src="{{link}}" type="video/mp4" />
+    </video>
+    
+    <div class="controles">
+      
+      <div class="orange-bar">
+        <div class="orange-juice"></div>
+        {{#each markers}}
+          <div class="markersTime {{privacidade}}" style="margin-left: {{percentual}}%"></div>
+        {{/each}}
+      </div>
+  
+      <div class="left">
+        <div class="botoes">
+          <a id="play"><i class="fa fa-play"></i></a>
+        </div>
+  
+        <div class="botoes video-volume">
+          <a id="volume"><i class="fa fa-volume-up"></i></a>
+        </div>
+    
+        <div class="slide">
+          <div class="slider-vol-bar">
+              <div class="slider-vol-state"></div>
+          </div>
+        </div>
+        
+        <div class="botoes">
+          <span id="timeVideo" data-time="0">00 : 00</span>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="botoes">
+          <a id="newMarker"><i class="fa fa-plus"> Marker</i></a>
+        </div>
+
+        <div class="botoes">
+          <a id="PIP" value="modoTeatro"><i class="fa fa-desktop"></i></a>
+        </div>
+  
+        <div class="botoes">
+          <a id="modoVisualizacao" value="modoTeatro"><i class="fa fa-expand"></i></a>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  {{/with}}
+  <div class="newMarker border">
+    <div class="markerBox">
+      <div class="superiorMarkerText">
+        <div class="timeNewMarker">00:00</div>
+        <div class="privacidadeMarker">
+          <span>Visibilidade: <span class="privacidade">Privado</span></span>
+          <label class="switch">
+            <input type="checkbox" class="sliderInput">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+  
+      <div class="markerText">
+        <textarea id="textNewMarker" rows="3"></textarea>
+      </div>
+  
+      <div class="inferiorMarkerText">
+        <div class="botoes">
+          <button class="btn btn-secondary" id="cancelar">Cancelar</button>
+          <button class="btn btn-primary" id="marcar">Marcar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="markersList border">
+    {{#each markers}}
+    <div class="markerBox">
+      <div class="superiorMarkerText">
+        <div class="userTime">
+          <div class="user">{{userId}}</div>
+          <div class="time">{{formataTime time}}</div>
+        </div>
+        <div class="privacidadeMarker">
+          <p>
+            {{privacidade}}
+            <canvas class="router {{privacidade}}"></canvas>
+          </p>
+        </div>
+      </div>
+  
+      <div class="markerText">
+        <div class="chat-box">{{text}}</div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  
+</template>

@@ -1,0 +1,205 @@
+.video-player{
+  width: 550px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  z-index: 0;
+  background-color: black;
+  margin: 10px;
+}
+
+.newMarker{
+  display: none;
+  width: 550px;
+}
+
+.markersList{
+  min-height: 350px;
+  width: 550px;
+  margin: 10px;
+}
+
+.controles {
+  display: none;
+  position: absolute;
+  justify-content: space-between;
+  bottom: 0;
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 10;
+}
+
+.video-player:hover .controles{
+  display: flex;
+}
+
+.botoes a {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.botoes a:before{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+.botoes {
+  padding: 8px;
+}
+
+.orange-bar {
+  height: 5px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(104, 104, 104, 0.541);
+  cursor: pointer;
+  display: flex;
+  z-index: 0;
+}
+
+.orange-juice {
+  height: 5px;
+  width: 0%;
+  background-color: rgb(131, 14, 14);
+  z-index: 1;
+}
+
+.markersTime {
+  height: 5px;
+  width: 5px;
+  position: absolute;
+  z-index: 10;
+}
+
+.video{
+  width: 100%;
+}
+
+.publico {
+  background-color: yellow;
+}
+
+.privado {
+  background-color: rgb(33, 31, 163);
+}
+
+.router {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.markersDisparados{
+  width: 150px;
+  height: 50%;
+  background-color: rgba(0, 0, 0, .5);
+  right: 4px;
+  top: 4px;
+  position: absolute;
+  z-index: 5;
+  color: white;
+}
+
+.superiorMarkerText{
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.userTime{
+  width: 30%;
+  display: flex;
+  justify-content: space-between
+}
+
+.markerText{
+ width: 95%;
+}
+
+textarea{
+  width: 100%;
+}
+
+.markerBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.inferiorMarkerText{
+  width: 95%;
+}
+
+.inferiorMarkerText .botoes{
+  float: right;
+}
+
+#timeVideo{
+  color: white;
+}
+
+
+.unselectable{
+  -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.marker {
+  display: flex;
+  flex-direction: column;
+}
+
+span {
+  text-overflow: ellipsis;
+}
+
+.chat-box{
+  width: 100%;
+  height: 76px;
+  background-color: #fff;
+}
+
+.slide {
+  display: none;
+  align-items: center;
+  padding: 10px;
+}
+
+.slider-vol-bar {
+  display: block;
+  height: 5px;
+  width: 50px;
+  background-color: #fff;
+}
+
+.slider-vol-state{
+  height: 100%;
+  width: 50%;
+  background-color: rgb(131, 14, 14);
+}
+
+.video-volume:hover + .slide {
+  display: flex;
+}
+
+.slide:hover{
+  display: flex
+}
+
+.right{
+  display: flex;
+  flex-direction: row;
+}
+
+.left{
+  display: flex;
+  flex-direction: row;
+}
